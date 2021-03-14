@@ -15,7 +15,7 @@ const vegetables = ["veg1","veg2","veg3","veg4","veg5"];
 function Header(){
     return(
         <ContainerHeader>
-            {vegetables.map((v)=><ButtonGenerals size = "24" children = {v}/>)}
+            {vegetables.map((v)=><ButtonGenerals width = "50" height="50" size = "16" children = {v}/>)}
         </ContainerHeader>
     )    
 }

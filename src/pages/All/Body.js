@@ -41,11 +41,11 @@ function Body(){
         <div className="body-first">veg1</div>
         <div className="body-second">{products.map((p)=><Card product={p.product} price={p.price} category={p.category}/>)}</div>
         <div className="body-third">
-            <ButtonGenerals size = "16" children="<"/>
-            <ButtonGenerals size = "16" children="1"/>
-            <ButtonGenerals size = "16" children="2"/>
-            <ButtonGenerals size = "16" children="3"/>
-            <ButtonGenerals size = "16" children=">"/>
+            <ButtonGenerals size = "16" width = "20" height = "20" children="<"/>
+            <ButtonGenerals size = "16" width = "20" height = "20" children="1"/>
+            <ButtonGenerals size = "16" width = "20" height = "20"  children="2"/>
+            <ButtonGenerals size = "16" width = "20" height = "20" children="3"/>
+            <ButtonGenerals size = "16" width = "20" height = "20" children=">"/>
         </div>
     </ContainerBody>)
 }

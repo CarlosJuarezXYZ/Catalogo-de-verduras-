@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 const Button = styled.button`
-width:auto;
-height:${(props) => props.size}px;
+width:${(props)=> props.width}px;
+height:${(props) => props.height}px;
 border-radius:50%;
 color: rgba(0,0,0,0.5);
 border:1px solid #595959;
@@ -14,7 +14,7 @@ background-color:transparent;
 font-family: Roboto;
 font-style: normal;
 font-weight: 700;
-font-size: 14px;
+font-size: ${(props)=>props.size}px;
 line-height: 24px;
 cursor:pointer;
 &:hover{
@@ -26,9 +26,9 @@ cursor:pointer;
 }
 `
 
-function ButtonGenerals({size,children}){
+function ButtonGenerals({size,children,width,height}){
     return(
-        <Button size={size}>{children}</Button>
+        <Button width = {width} size={size} height={height}>{children}</Button>
     )
 }
 
