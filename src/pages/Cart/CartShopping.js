@@ -4,24 +4,37 @@ import ButtonGenerals from "../../components/Button";
 const ContainerShopping = styled.div`
 display:flex;
 padding:8px;
-border:1px solid black;
+justify-content : space-between;
+align-items: center;
+margin : 8px 0px;
+& .shopping1  p {
+    font-size:12px;
+    color: #595959;
+}
+& .shopping2{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    width:108px;
+}
 `
 
-function CartShopping(){
+function CartShopping({price,category,product,amount}){
     return(
         <ContainerShopping>
            <div className="shopping1">
-               <p>Carrots</p>
-               <p>Vegetables1</p>
-               <p>$3</p>
+               <p>{product}</p>
+               <p>{category}</p>
+               <p>{price}</p>
            </div>
 
-           <div>
-               <ButtonGenerals width = {14} height = {14} size={14}>-</ButtonGenerals>
-               <p>1</p>
-               <ButtonGenerals width = {14} height = {14} size={14}>+</ButtonGenerals>
+           <div className="shopping2">
+               <ButtonGenerals width = {20} height = {20} size={14}>-</ButtonGenerals>
+               <p>{amount}</p>
+               <ButtonGenerals width = {20} height = {20} size={14}>+</ButtonGenerals>
            </div>
-           <div></div>
+
+           <div className="shopping3">{price}</div>
         </ContainerShopping>
     
     )
