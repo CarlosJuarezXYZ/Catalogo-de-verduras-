@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import ButtonGenerals from "../../components/Button";
+import {useState} from "react"
 
 const ContainerShopping = styled.div`
 display:flex;
@@ -18,8 +19,17 @@ margin : 8px 0px;
     width:108px;
 }
 `
+function CartShopping({price,category,product}){
+    const [cant, setCant] = useState(0);
 
-function CartShopping({price,category,product,amount}){
+function increment(){
+    setCant(cant+1);
+}
+
+function decrement(){
+    setCant(cant-1);
+}
+
     return(
         <ContainerShopping>
            <div className="shopping1">
@@ -29,9 +39,9 @@ function CartShopping({price,category,product,amount}){
            </div>
 
            <div className="shopping2">
-               <ButtonGenerals width = {20} height = {20} size={14}>-</ButtonGenerals>
-               <p>{amount}</p>
-               <ButtonGenerals width = {20} height = {20} size={14}>+</ButtonGenerals>
+               <button onClick={()=>decrement()}><ButtonGenerals width = {20} height = {20} size={14}>-</ButtonGenerals></button>
+               <p>{cant}</p>
+               <button onClick={()=>increment()}><ButtonGenerals width = {20} height = {20} size={14}>+</ButtonGenerals></button>
            </div>
 
            <div className="shopping3">{price}</div>

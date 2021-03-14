@@ -27,9 +27,9 @@ flex-direction:column;
 }
 `
 const shoppinData = [
-    {product:"carrots",price:"$2",category:"carrots",amount:"1"},
-    {product:"carrots",price:"$2",category:"carrots",amount:"1"},
-    {product:"carrots",price:"$2",category:"carrots",amount:"1"}
+    {product:"carrots",price:"$2",category:"carrots"},
+    {product:"carrots",price:"$2",category:"carrots"},
+    {product:"carrots",price:"$2",category:"carrots"}
 ] 
 
 function Cart(){
@@ -38,7 +38,7 @@ function Cart(){
         <ShoppingContainer>
             <div className="cart-header">Cart</div>
             <div className="cart-body">
-                {shoppinData.map((sho)=> <CartShopping product={sho.product} price={sho.price} category = {sho.category} amount = {sho.amount}/>)}
+                {shoppinData.map((sho)=> <CartShopping product={sho.product} price={sho.price} category = {sho.category}/>)}
             </div>
             <div className="cart-amount">
                 <p>{`total amount : `}</p>
