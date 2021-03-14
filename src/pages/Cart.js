@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import ButtonGenerals from "../components/Button";
 import Footer from "./All/Footer";
 import CartShopping from "./Cart/CartShopping";
+import {useHistory} from "react-router-dom";
 
 const ShoppingContainer = styled.div`
 display:flex;
@@ -19,6 +20,11 @@ flex-direction:column;
     padding:8px;
     gap:8px;
 }
+& button{
+    background-color:transparent;
+    outline:none;
+    border:none;
+}
 `
 const shoppinData = [
     {product:"carrots",price:"$2",category:"carrots",amount:"1"},
@@ -27,6 +33,7 @@ const shoppinData = [
 ] 
 
 function Cart(){
+    let history = useHistory();
     return(
         <ShoppingContainer>
             <div className="cart-header">Cart</div>
@@ -36,7 +43,7 @@ function Cart(){
             <div className="cart-amount">
                 <p>{`total amount : `}</p>
                 <div>
-                    <ButtonGenerals width = "100" height="100" size="18">Create your order</ButtonGenerals>
+                    <button onClick={()=>history.push("/succes")}><ButtonGenerals  width = "100" height="100" size="18">Create your order</ButtonGenerals></button>
                 </div>
             </div>
             <Footer/>
