@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { Global, css } from "@emotion/react";
 import './App.css';
+import ButtonGenerals from './components/Button';
+import Card from "./components/Card";
+import Body from "./pages/All/Body";
+import Header from "./pages/All/Header";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Global 
+        styles={css`
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+        *{
+          font-family: Source Code Pro;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body {
+          //background: #f2f2f2;
+        }
+        `}
+      />
+      <Header/>
+      <Body/>
     </div>
   );
 }
