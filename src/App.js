@@ -1,5 +1,6 @@
 import { Global, css } from "@emotion/react";
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ButtonGenerals from './components/Button';
 import Card from "./components/Card";
 import All from "./pages/All";
@@ -7,6 +8,8 @@ import Body from "./pages/All/Body";
 import Footer from "./pages/All/Footer";
 import Header from "./pages/All/Header";
 import Cart from "./pages/Cart";
+import Succes from "./pages/Succes";
+
 
 function App() {
   return (
@@ -28,8 +31,13 @@ function App() {
         }
         `}
       />
-     {/*<All/>*/}
-     <Cart/>
+        <Router>
+          <Switch>
+            <Route path="/succes" component={Succes}/>
+            <Route path="/cart" component={Cart}/>
+            <Route path = "/" component={All}/>
+          </Switch>
+        </Router>        
     </div>
   );
 }
