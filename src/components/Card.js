@@ -44,6 +44,9 @@ border:1px solid black;
     display:flex;
     flex:start;
 }
+& button:focus{
+    outline:none;
+}
 `
 function Card({price,category,product}){
     return(

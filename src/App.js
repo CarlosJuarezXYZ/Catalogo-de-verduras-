@@ -2,8 +2,11 @@ import { Global, css } from "@emotion/react";
 import './App.css';
 import ButtonGenerals from './components/Button';
 import Card from "./components/Card";
+import All from "./pages/All";
 import Body from "./pages/All/Body";
+import Footer from "./pages/All/Footer";
 import Header from "./pages/All/Header";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -20,11 +23,13 @@ function App() {
         }
         body {
           //background: #f2f2f2;
+          display:flex;
+          justify-content:center;
         }
         `}
       />
-      <Header/>
-      <Body/>
+     {/*<All/>*/}
+     <Cart/>
     </div>
   );
 }
